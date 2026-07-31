@@ -35,6 +35,10 @@ export const metadata: Metadata = {
       "IoT Developer & Telecommunication Engineering Student at Politeknik Negeri Jakarta",
     type: "website",
   },
+  // 👇 Tambahkan kode di bawah ini untuk Favicon
+  icons: {
+    icon: "/profile.jpg",
+  },
 };
 
 export default function RootLayout({

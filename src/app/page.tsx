@@ -30,6 +30,7 @@ import {
   Radio,
   Lock,
   ParkingCircle,
+  Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -61,6 +62,34 @@ function LinkedinIcon({ className }: { className?: string }) {
 /* ------------------------------------------------------------------ */
 
 const PROJECTS = [
+  {
+    title: "Digitalisasi Logbook Laboratorium",
+    role: "Project Developer (Tugas Akhir)",
+    period: "2026",
+    location: "Depok, Indonesia",
+    icon: LayoutGrid,
+    color: "text-blue-400",
+    bg: "bg-blue-400/10",
+    description: [
+      "Perancangan sistem untuk manajemen alat praktikum secara terpadu",
+      "Mengintegrasikan Face Recognition sebagai metode autentikasi yang aman dan Web Management System untuk pendataan alat",
+    ],
+    techs: ["Face Recognition", "Web System", "Manajemen Data"],
+  },
+  {
+    title: "Sistem Monitoring Pertanian Berbasis Drone",
+    role: "Drone Data Analyst",
+    period: "Feb 2026 – Apr 2026",
+    location: "Depok, Indonesia",
+    icon: Cpu,
+    color: "text-green-400",
+    bg: "bg-green-400/10",
+    description: [
+      "Membangun dan memodifikasi sistem drone untuk pemantauan area pertanian dengan fokus pada deteksi daun",
+      "Memanfaatkan kamera bawaan drone untuk monitoring visual dan pengambilan data lapangan",
+    ],
+    techs: ["Drone Platform", "Computer Vision", "Data Analysis"],
+  },
   {
     title: "SMAPAR (Smart Parking System)",
     role: "IoT & Back-End Developer",
@@ -117,33 +146,6 @@ const PROJECTS = [
       "Menangani proses routing dan pengujian konektivitas bersama tim",
     ],
     techs: ["Mikrotik", "TP-Link", "LAN", "Routing"],
-  },
-  {
-    title: "Door Lock Digital Berbasis Autentikasi OSIS",
-    role: "Project Developer",
-    period: "Agustus 2022 – Oktober 2022",
-    location: "Bekasi, Indonesia",
-    icon: Lock,
-    color: "text-rose-400",
-    bg: "bg-rose-400/10",
-    description: [
-      "Mendesain sistem kunci pintu otomatis berbasis mikrokontroler",
-      "Membatasi akses hanya untuk anggota OSIS yang terdaftar guna menjaga keamanan aset organisasi",
-    ],
-    techs: ["Mikrokontroler", "RFID", "Sistem Akses"],
-  },
-  {
-    title: "Simulasi Jammer Sinyal Pengamanan Ujian",
-    role: "Project Developer",
-    period: "September 2022 – Present",
-    location: "Bekasi, Indonesia",
-    icon: Shield,
-    color: "text-orange-400",
-    bg: "bg-orange-400/10",
-    description: [
-      "Mengembangkan alat simulasi jammer berbasis ESP8266 untuk mengganggu sinyal seluler selama ujian",
-    ],
-    techs: ["ESP8266", "RF Signal", "Embedded"],
   },
 ];
 
@@ -203,13 +205,13 @@ const SKILLS = [
 ];
 
 const CERTIFICATIONS = [
-  "Certified MTCNA by Mikrotik",
-  "Belajar Dasar-Dasar DevOps by Dicoding",
-  "Belajar Dasar Pemrograman JavaScript by Dicoding",
-  "Cloud Practitioner Essentials (AWS Cloud) by Dicoding",
-  "Training Cisco Dasar by ID-Networkers",
-  "Training Jaringan Komputer Dasar by ID-Networkers",
-  "Training Mikrotik Dasar by ID-Networkers",
+  { name: "Certified MTCNA by Mikrotik", image: "/mikrotikmtcna.png" },
+  { name: "Belajar Dasar-Dasar DevOps by Dicoding", image: "/devops.png" },
+  { name: "Belajar Dasar Pemrograman JavaScript by Dicoding", image: "/pemogramanjava.png" },
+  { name: "Cloud Practitioner Essentials (AWS Cloud) by Dicoding", image: "/aws.png" },
+  { name: "Training Cisco Dasar by ID-Networkers", image: "/ciscodasar.png" },
+  { name: "Training Jaringan Komputer Dasar by ID-Networkers", image: "/jaringankomputer.png" },
+  { name: "Training Mikrotik Dasar by ID-Networkers", image: "/mikrotikdasar.png" },
 ];
 
 const NAV_LINKS = [
@@ -222,7 +224,7 @@ const NAV_LINKS = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  ANIMATED SECTION WRAPPER                                           */
+/*  ANIMATED SECTION WRAPPER                                          */
 /* ------------------------------------------------------------------ */
 
 function AnimatedSection({
@@ -253,13 +255,18 @@ function AnimatedSection({
 }
 
 /* ------------------------------------------------------------------ */
-/*  NAVBAR                                                             */
+/*  NAVBAR                                                            */
 /* ------------------------------------------------------------------ */
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -302,7 +309,9 @@ function Navbar() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? (
+            {!mounted ? (
+              <div className="h-5 w-5" />
+            ) : theme === "dark" ? (
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
             ) : (
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
@@ -318,7 +327,9 @@ function Navbar() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? (
+            {!mounted ? (
+              <div className="h-5 w-5" />
+            ) : theme === "dark" ? (
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
             ) : (
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
@@ -450,6 +461,12 @@ function Hero() {
                   Lihat Proyek
                 </a>
               </Button>
+              <Button asChild variant="secondary" size="lg" className="gap-2">
+                <a href="/CV_Mohammad_Fauzan.pdf" download target="_blank" rel="noopener noreferrer">
+                  <Download className="h-4 w-4" />
+                  Download CV
+                </a>
+              </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <a href="#contact">
                   <Mail className="h-4 w-4" />
@@ -483,9 +500,11 @@ function Hero() {
                 <LinkedinIcon className="h-5 w-5" />
               </a>
               <a
-                href="tel:+6285974785943"
+                href="https://wa.me/6285974785943"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Phone"
+                aria-label="WhatsApp"
               >
                 <Phone className="h-5 w-5" />
               </a>
@@ -505,7 +524,7 @@ function Hero() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400 via-emerald-400 to-teal-500 opacity-20 blur-2xl animate-pulse-glow" />
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 ring-4 ring-primary/5">
                 <Image
-                  src="/profile.png"
+                  src="/profile.jpg"
                   alt="Mohammad Fauzan"
                   fill
                   className="object-cover"
@@ -796,6 +815,8 @@ function Education() {
 /* ------------------------------------------------------------------ */
 
 function Skills() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <AnimatedSection id="skills" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -844,21 +865,69 @@ function Skills() {
             <Award className="h-4 w-4" />
             Sertifikasi & Pelatihan
           </h3>
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {CERTIFICATIONS.map((cert, i) => (
-              <div
+              <Card
                 key={i}
-                className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent/50 transition-colors"
+                className="group overflow-hidden hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 border-border/50"
               >
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Award className="h-3.5 w-3.5 text-primary" />
+                <div 
+                  className="relative w-full aspect-[4/3] bg-muted/50 border-b border-border/50 cursor-pointer"
+                  onClick={() => setSelectedImage(cert.image)}
+                >
+                  <Image
+                    src={cert.image}
+                    alt={cert.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                     <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md font-medium text-sm">
+                        Perbesar Gambar
+                     </span>
+                  </div>
                 </div>
-                <span className="text-sm text-muted-foreground">{cert}</span>
-              </div>
+                <CardContent className="p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/20 transition-colors">
+                      <Award className="h-4 w-4 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium leading-snug">{cert.name}</span>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Lightbox / Pop-up Gambar Fullscreen */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-200 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-50"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          <div 
+            className="relative w-full max-w-5xl h-[80vh] sm:h-[90vh] shadow-2xl rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={selectedImage}
+              alt="Sertifikat Fullscreen"
+              fill
+              className="object-contain"
+              quality={100}
+            />
+          </div>
+        </div>
+      )}
     </AnimatedSection>
   );
 }
@@ -887,9 +956,9 @@ function Contact() {
             },
             {
               icon: Phone,
-              label: "Telepon",
+              label: "WhatsApp",
               value: "+62 85974785943",
-              href: "tel:+6285974785943",
+              href: "https://wa.me/6285974785943",
             },
             {
               icon: LinkedinIcon,
