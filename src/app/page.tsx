@@ -515,7 +515,7 @@ function Hero() {
           {/* Profile image */}
           <div
             className={cn(
-              "relative flex-shrink-0 transition-all duration-1000 delay-300",
+              "relative flex-shrink-0 transition-all duration-1000 delay-300",  
               mounted
                 ? "opacity-100 scale-100"
                 : "opacity-0 scale-90"
@@ -525,7 +525,7 @@ function Hero() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400 via-emerald-400 to-teal-500 opacity-20 blur-2xl animate-pulse-glow" />
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 ring-4 ring-primary/5">
                 <Image
-                  src="/profile.JPEG"
+                  src="/profile.jpeg"
                   alt="Mohammad Fauzan"
                   fill
                   className="object-cover"

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   // 👇 Tambahkan kode di bawah ini untuk Favicon
   icons: {
-    icon: "/profile.JPEG",
+    icon: "/profile.jpeg",
   },
 };
 
