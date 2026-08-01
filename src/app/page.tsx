@@ -492,7 +492,7 @@ function Hero() {
                 <Mail className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/mohammad-fauzan07/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -985,7 +985,7 @@ function Contact() {
               icon: LinkedinIcon,
               label: "LinkedIn",
               value: "Mohammad Fauzan",
-              href: "https://linkedin.com",
+              href: "https://www.linkedin.com/in/mohammad-fauzan07/",
             },
           ].map((item, i) => (
             <Card
