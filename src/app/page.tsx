@@ -177,9 +177,10 @@ const ORGANIZATIONS = [
 ];
 
 const EDUCATION = [
-  {
+{
     school: "Politeknik Negeri Jakarta",
-    degree: "Diploma III, Teknik Elektro, Telekomunikasi",
+    // Tambahkan IPK di baris bawah ini:
+    degree: "Diploma III, Teknik Elektro, Telekomunikasi • IPK: 3.69",
     period: "September 2023 – September 2026",
     location: "Depok, Indonesia",
     current: true,
@@ -524,7 +525,7 @@ function Hero() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400 via-emerald-400 to-teal-500 opacity-20 blur-2xl animate-pulse-glow" />
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 ring-4 ring-primary/5">
                 <Image
-                  src="/profile.jpg"
+                  src="/profile.JPEG"
                   alt="Mohammad Fauzan"
                   fill
                   className="object-cover"
@@ -611,7 +612,7 @@ function About() {
             <CardContent className="p-6 sm:p-8">
               <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                 Saya adalah mahasiswa <strong className="text-foreground">Teknik Telekomunikasi</strong> di{" "}
-                <strong className="text-foreground">Politeknik Negeri Jakarta</strong> dengan rasa penasaran
+                <strong className="text-foreground">Politeknik Negeri Jakarta</strong> (IPK 3.69) dengan rasa penasaran
                 yang tinggi dan ide kreatif yang mendorong inovasi. Memiliki kemampuan manajemen waktu
                 yang baik, bekerja dalam tim, dan tekad yang kuat untuk menyelesaikan proyek sesuai
                 kebutuhan dan tenggat waktu. Saya terbuka terhadap masukan dan terus berusaha
@@ -751,7 +752,7 @@ function Organizations() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  EDUCATION                                                          */
+/*  EDUCATION                                                         */
 /* ------------------------------------------------------------------ */
 
 function Education() {
@@ -783,11 +784,31 @@ function Education() {
                           {edu.degree}
                         </p>
                       </div>
-                      {edu.current && (
-                        <Badge className="bg-primary/10 text-primary border-0 text-xs">
-                          Saat Ini
-                        </Badge>
-                      )}
+                      
+                      {/* Bagian Badge & Tombol Transkrip */}
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-2 sm:mt-0">
+                        {edu.current && (
+                          <Badge className="bg-primary/10 text-primary border-0 text-xs">
+                            Saat Ini
+                          </Badge>
+                        )}
+                        
+                        {/* Tombol ini hanya akan muncul di card Politeknik Negeri Jakarta */}
+                        {edu.school === "Politeknik Negeri Jakarta" && (
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="h-6 text-[10px] px-2 border-primary/20 hover:bg-primary/10 gap-1.5" 
+                            asChild
+                          >
+                            <a href="/Transkrip_Nilai_Mohammad_Fauzan.pdf" target="_blank" rel="noopener noreferrer">
+                              <Download className="h-3 w-3" />
+                              Transkrip Nilai
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                      
                     </div>
                     <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
                       <span className="flex items-center gap-1">

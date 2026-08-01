@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  
+  // Ini adalah kode baru untuk menghilangkan logo "N"
+  devIndicators: false,
 };
 
 export default nextConfig;
