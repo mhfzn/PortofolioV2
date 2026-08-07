@@ -63,89 +63,88 @@ function LinkedinIcon({ className }: { className?: string }) {
 
 const PROJECTS = [
   {
-    title: "Digitalisasi Logbook Laboratorium",
-    role: "Project Developer (Tugas Akhir)",
-    period: "2026",
-    location: "Depok, Indonesia",
-    icon: LayoutGrid,
-    color: "text-blue-400",
-    bg: "bg-blue-400/10",
-    description: [
-      "Perancangan sistem untuk manajemen alat praktikum secara terpadu",
-      "Mengintegrasikan Face Recognition sebagai metode autentikasi yang aman dan Web Management System untuk pendataan alat",
-    ],
-    techs: ["Face Recognition", "Web System", "Manajemen Data"],
-  },
-  {
     title: "Sistem Monitoring Pertanian Berbasis Drone",
-    role: "Drone Data Analyst",
-    period: "Feb 2026 – Apr 2026",
+    role: "Teknisi Perangkat Keras / Pengembang Proyek",
+    period: "Febuari 2026 – Juli 2026",
     location: "Depok, Indonesia",
     icon: Cpu,
     color: "text-green-400",
     bg: "bg-green-400/10",
     description: [
-      "Membangun dan memodifikasi sistem drone untuk pemantauan area pertanian dengan fokus pada deteksi daun",
-      "Memanfaatkan kamera bawaan drone untuk monitoring visual dan pengambilan data lapangan",
+      "Mengoptimalkan sistem pemantauan drone dengan memanfaatkan kamera ESP32S3-Cam untuk deteksi Pertumbuhan Strawberry menggunakan Computer Vision",
+      "Merancang struktur payload 3D kustom menggunakan SketchUp dan Cura untuk mendukung infrastruktur fisik drone",
     ],
-    techs: ["Drone Platform", "Computer Vision", "Data Analysis"],
+    techs: ["Kamera Bawaan", "Deteksi Daun", "SketchUp", "Cura", "Computer Vision"],
   },
   {
-    title: "SMAPAR (Smart Parking System)",
-    role: "IoT & Back-End Developer",
-    period: "Juni 2024 – Jan 2025",
+    title: "SMAPAR (Sistem Parkir Pintar)",
+    role: "Pengembang IoT & Back-End",
+    period: "Juni 2024 – Januari 2025",
     location: "Depok, Indonesia",
     icon: ParkingCircle,
     color: "text-teal-400",
     bg: "bg-teal-400/10",
     description: [
-      "Mengembangkan sistem parkir mobil pintar berbasis IoT",
-      "Bertanggung jawab atas komunikasi antara Flask dan MQTT untuk pengiriman data sensor secara real-time",
-      "Mendukung integrasi backend dengan sistem deteksi ketersediaan parkir",
+      "Merancang perangkat keras sensor parkir dan memprogram mikrokontroler menggunakan C/C++ untuk deteksi fisik kendaraan",
+      "Mengintegrasikan transmisi data telemetri ke dalam sistem back-end web berbasis Flask",
     ],
-    techs: ["Python", "Flask", "MQTT", "IoT"],
+    techs: ["C/C++", "Flask", "IoT", "Telemetri"],
+  },
+  {
+    title: "Kunci Pintu Digital Berbasis Autentikasi OSIS",
+    role: "Pengembang Proyek",
+    period: "Agustus 2022 – Oktober 2022",
+    location: "Bekasi, Indonesia",
+    icon: Lock,
+    color: "text-indigo-400",
+    bg: "bg-indigo-400/10",
+    description: [
+      "Merancang dan menyolder rangkaian sistem kunci pintu otomatis berbasis mikrokontroler",
+      "Menulis kode C/C++ untuk mengelola logika pembatasan akses fisik secara aman",
+    ],
+    techs: ["Mikrokontroler", "C/C++", "Sistem Keamanan Akses"],
   },
   {
     title: "Sistem Absensi RFID Terintegrasi Web",
-    role: "Project Developer",
+    role: "Pengembang Proyek",
     period: "Oktober 2022 – November 2022",
     location: "Bekasi, Indonesia",
     icon: Radio,
     color: "text-emerald-400",
     bg: "bg-emerald-400/10",
     description: [
-      "Membangun sistem absensi berbasis RFID menggunakan ESP8266 yang terkoneksi secara real-time ke website sekolah",
-      "Memanfaatkan kartu identitas siswa sebagai media autentikasi kehadiran",
+      "Merakit dan menyolder perangkat keras pembaca RFID pada ESP8266 menggunakan pemrograman C/C++ untuk autentikasi fisik",
+      "Mengintegrasikan transmisi data kehadiran secara real-time ke situs web sekolah",
     ],
-    techs: ["ESP8266", "RFID", "HTML/CSS", "JavaScript"],
+    techs: ["ESP8266", "RFID", "C/C++", "Integrasi Web"],
   },
   {
-    title: "Prototipe Keyless Starter Motor (BLE)",
-    role: "Project Developer Team",
+    title: "Prototipe Starter Motor Tanpa Kunci (BLE)",
+    role: "Tim Pengembang Proyek",
     period: "Oktober 2022 – November 2022",
     location: "Bekasi, Indonesia",
     icon: Car,
     color: "text-amber-400",
     bg: "bg-amber-400/10",
     description: [
-      "Mengembangkan sistem starter motor tanpa kunci menggunakan ESP32 dan Bluetooth Low Energy",
-      "Terinspirasi dari konsep keamanan motor GSX untuk meningkatkan perlindungan kendaraan",
+      "Mengembangkan rangkaian perangkat keras starter motor tanpa kunci berbasis ESP32",
+      "Memprogram logika kontrol Bluetooth Low Energy (BLE) menggunakan C/C++ untuk meningkatkan keamanan fisik kendaraan",
     ],
-    techs: ["ESP32", "BLE", "C++", "Arduino"],
+    techs: ["ESP32", "BLE", "C/C++", "Keamanan Perangkat Keras"],
   },
   {
     title: "Implementasi Jaringan LAN SMK",
-    role: "Pengalaman Proyek Jaringan",
+    role: "Teknisi Jaringan",
     period: "Agustus 2022 – November 2022",
     location: "Bekasi, Indonesia",
     icon: Network,
     color: "text-cyan-400",
     bg: "bg-cyan-400/10",
     description: [
-      "Terlibat dalam instalasi dan konfigurasi jaringan lokal menggunakan router TP-Link",
-      "Menangani proses routing dan pengujian konektivitas bersama tim",
+      "Melakukan instalasi infrastruktur jaringan area lokal (LAN) fisik, termasuk perakitan kabel",
+      "Melakukan konfigurasi perangkat keras router TP-Link untuk memastikan stabilitas konektivitas sistem sekolah",
     ],
-    techs: ["Mikrotik", "TP-Link", "LAN", "Routing"],
+    techs: ["LAN", "Router TP-Link", "Infrastruktur Jaringan"],
   },
 ];
 
@@ -183,7 +182,7 @@ const EDUCATION = [
     degree: "Diploma III, Teknik Elektro, Telekomunikasi • IPK: 3.69",
     period: "September 2023 – September 2026",
     location: "Depok, Indonesia",
-    current: true,
+    current: false,
   },
   {
     school: "SMK Taman Harapan",
@@ -195,14 +194,35 @@ const EDUCATION = [
 ];
 
 const SKILLS = [
-  { name: "SQL", icon: Database },
-  { name: "HTML/CSS", icon: Globe },
-  { name: "MATLAB", icon: Terminal },
-  { name: "Python", icon: Code },
-  { name: "3D Design", icon: Box },
-  { name: "Networking", icon: Network },
-  { name: "IoT", icon: Cpu },
-  { name: "Server", icon: Server },
+  "LoRa",
+  "C++",
+  "MATLAB",
+  "SQL",
+  "HTML/CSS",
+  "Next.js",          
+  "Tailwind CSS",     
+  "React",            
+  "Embedded Systems (ESP32/ESP8266/Arduino)",
+  "Hardware Soldering",
+  "3D Design",
+  "Flask",
+  "Python",
+  "ESP32",
+  "Computer Vision",
+  "UAV Integration",
+  "MikroTik",
+  "MQTT",
+  "Pembacaan",
+  "Osiloskop",
+  "Mekatronika",
+  "Diagramming",
+  "Wiring",
+  "Electrical Engineering",
+  "Troubleshooting",
+  "C Programming",
+  "Instalasi",
+  "Mikrokontroler",
+  "Internet of Things",
 ];
 
 const CERTIFICATIONS = [
@@ -382,7 +402,7 @@ function Hero() {
   return (
     <section
       id="#"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center overflow-hidden pt-24 lg:pt-32"
     >
       {/* Background grid pattern */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
@@ -463,9 +483,9 @@ function Hero() {
                 </a>
               </Button>
               <Button asChild variant="secondary" size="lg" className="gap-2">
-                <a href="/CV_Mohammad_Fauzan.pdf" download target="_blank" rel="noopener noreferrer">
-                  <Download className="h-4 w-4" />
-                  Download CV
+                <a href="/CV_Mohammad_Fauzan.pdf" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4" /> {/* Saya ganti iconnya jadi ExternalLink agar lebih pas dengan fungsinya */}
+                  Lihat CV
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
@@ -537,22 +557,17 @@ function Hero() {
             <div className="absolute -top-2 -right-2 bg-card border border-border rounded-xl px-3 py-1.5 shadow-lg animate-fade-in animation-delay-500">
               <div className="flex items-center gap-1.5 text-xs font-medium">
                 <Cpu className="h-3.5 w-3.5 text-teal-400" />
-                IoT Dev
+                Embedded Systems
               </div>
             </div>
             <div className="absolute -bottom-2 -left-2 bg-card border border-border rounded-xl px-3 py-1.5 shadow-lg animate-fade-in animation-delay-700">
               <div className="flex items-center gap-1.5 text-xs font-medium">
                 <Network className="h-3.5 w-3.5 text-emerald-400" />
-                MTCNA
+                Network & Back-End
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="h-6 w-6 text-muted-foreground" />
       </div>
     </section>
   );
@@ -795,17 +810,31 @@ function Education() {
                         
                         {/* Tombol ini hanya akan muncul di card Politeknik Negeri Jakarta */}
                         {edu.school === "Politeknik Negeri Jakarta" && (
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            className="h-6 text-[10px] px-2 border-primary/20 hover:bg-primary/10 gap-1.5" 
-                            asChild
-                          >
-                            <a href="/Transkrip_Nilai_Mohammad_Fauzan.pdf" target="_blank" rel="noopener noreferrer">
-                              <Download className="h-3 w-3" />
-                              Transkrip Nilai
-                            </a>
-                          </Button>
+                          <>
+                            {/* Tombol Transkrip Nilai (Tab Baru) */}
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              className="h-6 text-[10px] px-2 border-primary/20 hover:bg-primary/10 gap-1.5" 
+                              asChild>
+                              <a href="/Transkrip_Nilai_Mohammad_Fauzan.pdf" target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="h-3 w-3" />
+                                Transkrip Nilai
+                              </a>
+                            </Button>
+                            
+                            {/* Tombol SKL (Tab Baru) */}
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              className="h-6 text-[10px] px-2 border-primary/20 hover:bg-primary/10 gap-1.5" 
+                              asChild>
+                              <a href="/SKL_Mohammad_Fauzan.pdf" target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="h-3 w-3" />
+                                SKL
+                              </a>
+                            </Button>
+                          </>
                         )}
                       </div>
                       
@@ -832,7 +861,7 @@ function Education() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SKILLS & CERTIFICATIONS                                            */
+/*  SKILLS & CERTIFICATIONS                                           */
 /* ------------------------------------------------------------------ */
 
 function Skills() {
@@ -848,22 +877,20 @@ function Skills() {
         />
 
         {/* Skills grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12">
+        <div className="flex flex-wrap gap-3 mt-12">
           {SKILLS.map((skill, i) => (
-            <div
+            <Badge
               key={i}
-              className="group flex flex-col items-center gap-2.5 p-4 rounded-xl border border-border/50 hover:border-primary/30 bg-card hover:bg-accent/50 transition-all duration-300 hover:-translate-y-1"
+              variant="secondary"
+              className="px-4 py-2.5 text-sm font-medium bg-muted/60 hover:bg-primary/20 text-foreground transition-colors cursor-default"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                <skill.icon className="h-5 w-5 text-primary" />
-              </div>
-              <span className="text-sm font-medium">{skill.name}</span>
-            </div>
+              {skill}
+            </Badge>
           ))}
         </div>
 
         {/* Languages */}
-        <div className="mt-10">
+        <div className="mt-12">
           <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4 flex items-center gap-2">
             <Globe className="h-4 w-4" />
             Bahasa
@@ -904,7 +931,7 @@ function Skills() {
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                      <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md font-medium text-sm">
-                        Perbesar Gambar
+                       Perbesar Gambar
                      </span>
                   </div>
                 </div>
